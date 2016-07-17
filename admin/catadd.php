@@ -17,7 +17,7 @@
                <div class="block copyblock"> 
                 <?php 
                     if (isset($insertCat)){
-                        echo "$insertCat";
+                        echo $insertCat;
                     }
                  ?>
                  <form method="post" action="catadd.php"> 

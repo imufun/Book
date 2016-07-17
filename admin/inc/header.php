@@ -50,8 +50,7 @@
                     <img src="img/livelogo.png" alt="Logo" />
 				</div>
 				<div class="floatleft middle">
-					<h1>Training with live project</h1>
-					<p>www.trainingwithliveproject.com</p>
+					<h1>BookShop</h1>					 
 				</div>
                 <div class="floatright">
                     <div class="floatleft">
