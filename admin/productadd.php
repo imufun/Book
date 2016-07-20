@@ -1,11 +1,8 @@
-﻿
-
-
-<?php include 'inc/header.php'; ?>
+﻿<?php include 'inc/header.php'; ?>
 <?php include 'inc/sidebar.php'; ?>
 
-<?php include '../Classes/Category.php'; ?>
-<?php include '../Classes/Brand.php'; ?>
+<?php include '../classes/Category.php'; ?>
+<?php include '../classes/Brand.php'; ?>
 
 <div class="grid_10">
     <div class="box round first grid">
@@ -37,9 +34,11 @@
                                     while ($result = $getCat->fetch_assoc()) {
 
 
-                                ?>
-                                <option value="<?php echo $result['catId'];?>"><?php echo $result['catName'];?></option>
-                                <?php } } ?>
+                                        ?>
+                                        <option
+                                            value=" <?php echo $result['catID']; ?> ">  <?php echo $result ['catName']; ?>   </option>
+                                    <?php }
+                                } ?>
                             </select>
                         </td>
                     </tr>
@@ -50,9 +49,16 @@
                         <td>
                             <select id="select" name="brandId">
                                 <option>Select Brand</option>
-                                <option value="1">Brand One</option>
-                                <option value="2">Brand Two</option>
-                                <option value="3">Brand Three</option>
+                                <?php
+
+                                $brand = new Brand();
+                                $result = $brand->getAllBrand();
+                                if ($brand){
+                                    while ($result = $brand->fetch_assoc()) {
+                                        ?>
+                                        <option value="<?php echo $result ['brandID']; ?>">   <?php echo $result['brandName']; ?> </option>
+                                    <?php }
+                                } ?>
                             </select>
                         </td>
                     </tr>
@@ -108,15 +114,15 @@
     </div>
 </div>
 <!-- Load TinyMCE -->
-<script src="js/tiny-mce/jquery.tinymce.js" type="text/javascript"></script>
-<script type="text/javascript">
-    $(document).ready(function () {
-        setupTinyMCE();
-        setDatePicker('date-picker');
-        $('input[type="checkbox"]').fancybutton();
-        $('input[type="radio"]').fancybutton();
-    });
-</script>
+    <script src="js/tiny-mce/jquery.tinymce.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            setupTinyMCE();
+            setDatePicker('date-picker');
+            $('input[type="checkbox"]').fancybutton();
+            $('input[type="radio"]').fancybutton();
+        });
+    </script>
 <!-- Load TinyMCE -->
 <?php include 'inc/footer.php'; ?>
 
