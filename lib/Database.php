@@ -1,9 +1,7 @@
-<?php include '../config/config.php'; ?>
+<?php  require_once '../config/config.php';?>
 
 <?php
-
-Class Database
-{
+Class Database {
     public $host = DB_HOST;
     public $user = DB_USER;
     public $pass = DB_PASS;
@@ -19,6 +17,9 @@ Class Database
 
     private function connectDB()
     {
+       // include_once dirname(__FILE__) . '/config.php';
+
+
         $this->link = new mysqli($this->host, $this->user, $this->pass, $this->dbname);
         if (!$this->link) {
             $this->error = "Connection fail" . $this->link->connect_error;

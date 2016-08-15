@@ -1,13 +1,30 @@
 ﻿<?php include 'inc/header.php'; ?>
 <?php include 'inc/sidebar.php'; ?>
 
-<?php include '../classes/Category.php'; ?>
-<?php include '../classes/Brand.php'; ?>
+<?php require_once '../classes/Product.php'; ?>
+<?php require_once '../classes/Category.php'; ?>
 
+<?php require_once '../classes/Brand.php'; ?>
+
+<?php
+$pd = new Product();
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
+    //$catName = $_POST['catName'];
+    $insertProduct = $pd->ProductInsert($_POST, $_FILES);
+}
+
+?>
 <div class="grid_10">
     <div class="box round first grid">
         <h2>Add New Product</h2>
         <div class="block">
+
+            <?php
+            if (isset($insertProduct)) {
+                echo $insertProduct;
+            }
+            ?>
             <form action="" method="post" enctype="multipart/form-data">
                 <table class="form">
 
@@ -33,7 +50,6 @@
                                 if ($getCat) {
                                     while ($result = $getCat->fetch_assoc()) {
 
-
                                         ?>
                                         <option
                                             value=" <?php echo $result['catID']; ?> ">  <?php echo $result ['catName']; ?>   </option>
@@ -47,20 +63,23 @@
                             <label>Brand</label>
                         </td>
                         <td>
-                            <select id="select" name="brandId">
-                                <option>Select Brand</option>
-                                <?php
+                            <select id="select" name="brandID">
+                                <option>Select Category</option>
 
+                                <?php
                                 $brand = new Brand();
-                                $result = $brand->getAllBrand();
-                                if ($brand){
-                                    while ($result = $brand->fetch_assoc()) {
+                                $getBrand = $brand->getAllBrand();
+                                if ($getBrand) {
+                                    while ($result = $getBrand->fetch_assoc()) {
+
                                         ?>
-                                        <option value="<?php echo $result ['brandID']; ?>">   <?php echo $result['brandName']; ?> </option>
+                                        <option
+                                            value=" <?php echo $result['brandID']; ?> ">  <?php echo $result ['brandName']; ?>   </option>
                                     <?php }
                                 } ?>
                             </select>
                         </td>
+
                     </tr>
 
                     <tr>
@@ -114,15 +133,15 @@
     </div>
 </div>
 <!-- Load TinyMCE -->
-    <script src="js/tiny-mce/jquery.tinymce.js" type="text/javascript"></script>
-    <script type="text/javascript">
-        $(document).ready(function () {
-            setupTinyMCE();
-            setDatePicker('date-picker');
-            $('input[type="checkbox"]').fancybutton();
-            $('input[type="radio"]').fancybutton();
-        });
-    </script>
+<script src="js/tiny-mce/jquery.tinymce.js" type="text/javascript"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        setupTinyMCE();
+        setDatePicker('date-picker');
+        $('input[type="checkbox"]').fancybutton();
+        $('input[type="radio"]').fancybutton();
+    });
+</script>
 <!-- Load TinyMCE -->
 <?php include 'inc/footer.php'; ?>
 

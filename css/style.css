@@ -39,11 +39,12 @@ body{
 }
 .logo{
 	float:left;
-	width:33%;
+	width:15%;
 }
 /**** Header Top Right ****/
 .header_top_right{
-	float:left;
+	/*float:left;*/
+	float: right;
 	width:67%;
 	margin-top:35px;
 }
