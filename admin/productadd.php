@@ -3,7 +3,6 @@
 
 <?php require_once '../classes/Product.php'; ?>
 <?php require_once '../classes/Category.php'; ?>
-
 <?php require_once '../classes/Brand.php'; ?>
 
 <?php

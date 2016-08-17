@@ -2,7 +2,7 @@
 
 // include '../lib/Session.php';
 // Session::checkLogin();
-require_once '../lib/Database.php';
+
 require_once '../helpers/Format.php';
 ?>
 
@@ -20,7 +20,7 @@ Class Product
         $this->fm = new Format();
     }
 
-
+    // product Insert on db
     public function ProductInsert($data, $file)
     {
         $productName = mysqli_real_escape_string($this->db->link, $data['productName']);
@@ -64,6 +64,20 @@ Class Product
         }
 
 
+    }
+
+    //Get All Product from table
+    public function getAllProduct()
+    {
+        $query = "SELECT tbl_product.*, tbl_category.catName, tbl_brand.brandName 
+         FROM tbl_product
+         INNER JOIN tbl_category
+         ON tbl_product.catID = tbl_category.catID
+         INNER  JOIN tbl_brand
+         ON tbl_product.brandID= tbl_brand.brandID
+         ORDER BY tbl_product.productId DESC";
+        $result = $this->db->select($query);
+        return $result;
     }
 }
 
