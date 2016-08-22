@@ -3,11 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="adc3bf71-7f75-4631-a50e-44f5045ae97a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/brandedit.php" afterPath="$PROJECT_DIR$/admin/brandedit.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/catedit.php" afterPath="$PROJECT_DIR$/admin/catedit.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/productEdit.php" afterPath="$PROJECT_DIR$/admin/productEdit.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/productlist.php" afterPath="$PROJECT_DIR$/admin/productlist.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/Product.php" afterPath="$PROJECT_DIR$/classes/Product.php" />
     </list>
     <ignored path="bookshop.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -49,8 +44,8 @@
       <file leaf-file-name="productEdit.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/admin/productEdit.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="302">
-              <caret line="156" column="52" selection-start-line="156" selection-start-column="52" selection-end-line="156" selection-end-column="52" />
+            <state relative-caret-position="387">
+              <caret line="162" column="37" selection-start-line="162" selection-start-column="37" selection-end-line="162" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -262,7 +257,7 @@
       <workItem from="1471588176701" duration="1649000" />
       <workItem from="1471619919647" duration="15000" />
       <workItem from="1471801868479" duration="3303000" />
-      <workItem from="1471872746824" duration="10900000" />
+      <workItem from="1471872746824" duration="10955000" />
     </task>
     <task id="LOCAL-00001" summary="All file nicelly worked !! :)">
       <created>1468951810234</created>
@@ -299,11 +294,18 @@
       <option name="project" value="LOCAL" />
       <updated>1471875066412</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="product- Just click edit button then show edit page.">
+      <created>1471886726185</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1471886726185</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="66204000" />
+    <option name="totallyTimeSpent" value="66259000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -365,7 +367,8 @@
     <MESSAGE value="add product" />
     <MESSAGE value="--&gt; product category added &#10;&#10;&#10;problem : brand not showing" />
     <MESSAGE value="product- edit" />
-    <option name="LAST_COMMIT_MESSAGE" value="product- edit" />
+    <MESSAGE value="product- Just click edit button then show edit page." />
+    <option name="LAST_COMMIT_MESSAGE" value="product- Just click edit button then show edit page." />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -616,8 +619,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/admin/productEdit.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="156" column="52" selection-start-line="156" selection-start-column="52" selection-end-line="156" selection-end-column="52" />
+        <state relative-caret-position="387">
+          <caret line="162" column="37" selection-start-line="162" selection-start-column="37" selection-end-line="162" selection-end-column="37" />
           <folding />
         </state>
       </provider>
