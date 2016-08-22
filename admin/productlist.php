@@ -63,7 +63,7 @@ $fm = new Format();
                             </td>
 
                             <td>
-                                <a href="productEdit.php?catid=<?php echo $result['productId']; ?>">Edit</a> ||
+                                <a href="productEdit.php?proid=<?php echo $result['productId']; ?>">Edit</a> ||
                                 <a onclick="return confirm('Are you sure to delete!')"
                                    href="?delpro=<?php echo $result['productId']; ?>">Delete</a>
                             </td>

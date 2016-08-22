@@ -79,6 +79,24 @@ Class Product
         $result = $this->db->select($query);
         return $result;
     }
+
+
+    public function getProductById($id)
+    {
+
+        $query = "SELECT *FROM tbl_product WHERE productId = '$id'";
+        $result = $this->db->select($query);
+        return $result;
+
+
+    }
+
+    // Update all product list
+//    public function updateProduct()
+//    {
+//
+//    }
+
 }
 
 ?>

@@ -6,11 +6,20 @@
 <?php require_once '../classes/Brand.php'; ?>
 
 <?php
+
+
 $pd = new Product();
+
+if (!isset($_GET['proid']) || $_GET['proid'] == null) {
+    echo "<script>window.location = 'productlist.php';</script>";
+} else {
+    $id = $_GET['proid'];
+}
+
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
     //$catName = $_POST['catName'];
-    $insertProduct = $pd->ProductInsert($_POST, $_FILES);
+    $UpdateProduct = $pd->ProductUpdate($_POST, $_FILES, $id);
 }
 
 ?>
@@ -20,114 +29,150 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
         <div class="block">
 
             <?php
-            if (isset($insertProduct)) {
-                echo $insertProduct;
+            if (isset($UpdateProduct)) {
+                echo $UpdateProduct;
             }
             ?>
-            <form action="" method="post" enctype="multipart/form-data">
-                <table class="form">
 
-                    <tr>
-                        <td>
-                            <label>Name</label>
-                        </td>
-                        <td>
-                            <input type="text" name="productName" placeholder="Enter Product Name..." class="medium"/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label>Category</label>
-                        </td>
-                        <td>
-                            <select id="select" name="catId">
-                                <option>Select Category</option>
+            <?php
+            $getProduct = $pd->getProductById($id);
+            if ($getProduct) {
+                while ($value = $getProduct->fetch_assoc()) {
 
-                                <?php
-                                $cat = new Category();
-                                $getCat = $cat->getAllcat();
-                                if ($getCat) {
-                                    while ($result = $getCat->fetch_assoc()) {
+                    ?>
+                    <form action="" method="post" enctype="multipart/form-data">
+                        <table class="form">
 
-                                        ?>
-                                        <option
-                                            value=" <?php echo $result['catID']; ?> ">  <?php echo $result ['catName']; ?>   </option>
-                                    <?php }
-                                } ?>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label>Brand</label>
-                        </td>
-                        <td>
-                            <select id="select" name="brandID">
-                                <option>Select Category</option>
+                            <tr>
+                                <td>
+                                    <label>Name</label>
+                                </td>
+                                <td>
+                                    <input type="text" name="productName" value="<?php echo $value['productName'] ?>"
+                                           class="medium"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label>Category</label>
+                                </td>
+                                <td>
+                                    <select id="select" name="catId">
+                                        <option>Select Category</option>
 
-                                <?php
-                                $brand = new Brand();
-                                $getBrand = $brand->getAllBrand();
-                                if ($getBrand) {
-                                    while ($result = $getBrand->fetch_assoc()) {
+                                        <?php
+                                        $cat = new Category();
+                                        $getCat = $cat->getAllcat();
+                                        if ($getCat) {
+                                            while ($result = $getCat->fetch_assoc()) {
 
-                                        ?>
-                                        <option
-                                            value=" <?php echo $result['brandID']; ?> ">  <?php echo $result ['brandName']; ?>   </option>
-                                    <?php }
-                                } ?>
-                            </select>
-                        </td>
+                                                ?>
+                                                <option
+                                                    <?php
 
-                    </tr>
+                                                    if ($value['catID'] == $result['catID']) { ?>
+                                                        selected="selected"
 
-                    <tr>
-                        <td style="vertical-align: top; padding-top: 9px;">
-                            <label>Description</label>
-                        </td>
-                        <td>
-                            <textarea class="tinymce" name="body"></textarea>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label>Price</label>
-                        </td>
-                        <td>
-                            <input type="text" placeholder="Enter Price..." class="medium" name="price"/>
-                        </td>
-                    </tr>
+                                                    <?php } ?>
+                                                    value=" <?php echo $result['catID']; ?> ">  <?php echo $result ['catName']; ?>   </option>
+                                            <?php }
+                                        } ?>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label>Brand</label>
+                                </td>
+                                <td>
+                                    <select id="select" name="brandID">
+                                        <option>Select Category</option>
 
-                    <tr>
-                        <td>
-                            <label>Upload Image</label>
-                        </td>
-                        <td>
-                            <input type="file" name="image"/>
-                        </td>
-                    </tr>
+                                        <?php
+                                        $brand = new Brand();
+                                        $getBrand = $brand->getAllBrand();
+                                        if ($getBrand) {
+                                            while ($result = $getBrand->fetch_assoc()) {
 
-                    <tr>
-                        <td>
-                            <label>Product Type</label>
-                        </td>
-                        <td>
-                            <select id="select" name="type">
-                                <option>Select Type</option>
-                                <option value="0">Featured</option>
-                                <option value="1">General</option>
-                            </select>
-                        </td>
-                    </tr>
+                                                ?>
+                                                <option
+                                                    <?php
+                                                    if ($value['brandID'] == $result['brandID']) { ?>
+                                                        selected=selected
 
-                    <tr>
-                        <td></td>
-                        <td>
-                            <input type="submit" name="submit" Value="Save"/>
-                        </td>
-                    </tr>
-                </table>
-            </form>
+                                                    <?php } ?>
+                                                    value=" <?php echo $result['brandID']; ?> ">  <?php echo $result ['brandName']; ?>   </option>
+                                            <?php }
+                                        } ?>
+
+                                    </select>
+                                </td>
+
+                            </tr>
+
+                            <tr>
+                                <td style="vertical-align: top; padding-top: 9px;">
+                                    <label>Description</label>
+                                </td>
+                                <td>
+
+                                    <textarea class="tinymce" name="body">
+
+                                        <?php echo $value['body']; ?>
+                                    </textarea>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label>Price</label>
+                                </td>
+                                <td>
+                                    <input type="text" value="<?php echo $value['price']; ?>" class="medium"
+                                           name="price"/>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <label>Upload Image</label>
+                                </td>
+                                <td>
+                                    <img src="<?php echo $value['image']; ?>" height="80px" width="200px"><br>
+                                    <input type="file" name="image"/>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <label>Product Type</label>
+                                </td>
+                                <td>
+                                    <select id="select" name="type">
+                                        <option>Select Type</option>
+                                        <?php if ($value['type'] == 0) { ?>
+                                            <option selected="selected" value="0">Featured</option>
+                                            <option value="0">Featured</option>
+
+                                        <?php } else { ?>
+                                            <option selected="selected" value="1">General</option>
+                                            <option value="0">Featured</option>
+                                        <?php } ?>
+
+
+                                    </select>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <input type="submit" name="submit" Value="Save"/>
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
+                <?php }
+            } ?>
         </div>
     </div>
 </div>

@@ -4,15 +4,16 @@
 
 <?php
 
+$brand = new Brand();
 
     if (!isset($_GET['brandID']) || $_GET['brandID']==null) {
          echo "<script>window.location = 'brandlist.php';</script>";
     }else{
         $id = $_GET['brandID'];
     }
-        $brand  = new Brand();
 
-    if ($_SERVER['REQUEST_METHOD']== 'POST') {
+
+if ($_SERVER['REQUEST_METHOD']== 'POST') {
         $brandName = $_POST['brandName'];
         $updateBrand = $brand->brandUpdate($brandName, $id);
     }
