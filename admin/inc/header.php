@@ -50,7 +50,7 @@
                     <img src="img/logo.png" alt="Logo" />
 				</div>
 				<div class="floatleft middle">
-					<h1>BookShop</h1>
+                    <h1>Shop</h1>
 				</div>
                 <div class="floatright">
                     <div class="floatleft">

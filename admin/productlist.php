@@ -17,7 +17,7 @@ $fm = new Format();
 
 <div class="grid_10">
     <div class="box round first grid">
-        <h2>Post List</h2>
+        <h2>Product List</h2>
         <div class="block">
             <table class="data display datatable" id="example">
                 <thead>
@@ -38,7 +38,7 @@ $fm = new Format();
                 <?php
                 $getPd = $pd->getAllProduct();
                 if ($getPd) {
-                    $i=0;
+                    $i = 0;
                     while ($result = $getPd->fetch_assoc()) {
                         $i++;
                         ?>
@@ -49,7 +49,7 @@ $fm = new Format();
                             <td><?php echo $result['catName']; ?></td>
                             <td><?php echo $result['brandName']; ?></td>
                             <td><?php echo $fm->textShorten($result['body'], 50); ?></td>
-                            <td>$<?php echo $result['price']; ?></td>
+                            <td><?php echo $result['price']; ?> TK</td>
                             <td><img src="<?php echo $result['image']; ?>" height="40px" width="60px"></td>
                             <td>
                                 <?php
@@ -62,7 +62,11 @@ $fm = new Format();
 
                             </td>
 
-                            <td><a href="">Edit</a> || <a href="">Delete</a></td>
+                            <td>
+                                <a href="productEdit.php?catid=<?php echo $result['productId']; ?>">Edit</a> ||
+                                <a onclick="return confirm('Are you sure to delete!')"
+                                   href="?delpro=<?php echo $result['productId']; ?>">Delete</a>
+                            </td>
                         </tr>
                     <?php }
                 } ?>
