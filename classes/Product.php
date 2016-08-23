@@ -91,6 +91,37 @@ Class Product
 
     }
 
+    //product update
+    public function ProductUpdate()
+    {
+
+    }
+
+    //delete id
+    public function deleteProduct($id)
+    {
+
+        $query = "SELECT *FROM tbl_product WHERE productId='$id'";
+        $getData = $this->db->select($query);
+
+        if ($getData) {
+            while ($delImg = $getData->fetch_assoc()) {
+                $dellink = $delImg['image'];
+                unlink($dellink);
+            }
+        }
+        $delQuery = "DELETE FROM tbl_product WHERE productId='$id'";
+        $deldata = $this->db->delete($delQuery);
+        if ($deldata) {
+            $msg = "<span class='success'>Product Delete Item  </span>";
+            return $msg;
+        } else {
+            $msg = "<span class='error'>Product not deleted !!!</span>";
+            return $msg;
+        }
+
+    }
+
     // Update all product list
 //    public function updateProduct()
 //    {
