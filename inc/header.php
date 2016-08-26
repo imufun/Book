@@ -1,8 +1,8 @@
 <?php
 include 'lib/Session.php';
 Session::init();
-require_once 'lib/Database.php';
-require_once 'helpers/Format.php';
+include 'lib/Database.php';
+include 'helpers/Format.php';
 
 spl_autoload(function ($class) {
     include_once "class/" . $class . ".php";
