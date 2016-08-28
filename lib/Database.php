@@ -1,4 +1,9 @@
-<?php  require_once '../config/config.php';?>
+<?php
+
+    $filepath = realpath(dirname(__FILE__));
+    require_once ($filepath.'/../config/config.php');
+
+?>
 
 <?php
 Class Database {

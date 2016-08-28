@@ -1,23 +1,31 @@
 <?php
-include 'lib/Session.php';
-Session::init();
-include 'lib/Database.php';
-include 'helpers/Format.php';
+//    $filepath = realpath(dirname(__FILE__));
+//    include ($filepath . '/../lib/Session.php');
+//    Session::init();
+//    include ($filepath . '/../lib/Database.php');
+//    include ($filepath . '/../helpers/Format.php');
 
-spl_autoload(function ($class) {
-    include_once "class/" . $class . ".php";
-});
 
-$db = new Database();
-$fm = new Format();
-$pd = new Product();
-$ct = new Cart();
+  //  $filepath = realpath(dirname(__FILE__));
+    include 'lib/Session.php';
+    Session::init();
+    include 'lib/Database.php';
+    include 'helpers/Format.php';
+
+    spl_autoload_register(function ($class) {
+        include_once "classes/" . $class . ".php";
+    });
+
+    $db = new Database();
+    $fm = new Format();
+    $pd = new Product();
+    $ct = new Cart();
 ?>
 <?php
-header('Cache-Control: no-cache, must-revalidate');
-header("Expires: Mon, 26 Jul 1997 05:00:00 GMT");
-header("Cache-Control: no-cache");
-header("Pragma: no-cache");
+    header('Cache-Control: no-cache, must-revalidate');
+    header("Expires: Mon, 26 Jul 1997 05:00:00 GMT");
+    header("Cache-Control: no-cache");
+    header("Pragma: no-cache");
 
 ?>
 

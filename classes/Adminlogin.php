@@ -1,8 +1,14 @@
 <?php
-include '../lib/Session.php';
-Session::checkLogin();
-include '../lib/Database.php';
-include '../helpers/Format.php';
+    $filepath = realpath(dirname(__FILE__));
+    require_once ($filepath. '/../lib/Session.php');
+    Session::checkLogin();
+    require_once($filepath . '/../lib/Database.php');
+    require_once($filepath . '/../helpers/Format.php');
+
+?>
+<?php
+
+$filepath = realpath(dirname(__FILE__));
 
 ?>
 
