@@ -1,10 +1,10 @@
 <?php
 
-    $filepath = realpath(dirname(__FILE__));
+$filepath = realpath(dirname(__FILE__));
 
 
-    require_once($filepath . '/../lib/Database.php');
-    require_once($filepath . '/../helpers/Format.php');
+require_once($filepath . '/../lib/Database.php');
+require_once($filepath . '/../helpers/Format.php');
 ?>
 
 <?php
@@ -176,6 +176,22 @@ Class Product
         $result = $this->db->select($query);
         return $result;
     }
+
+    public function getNewProduct()
+    {
+        $query = "SELECT * FROM tbl_product  ORDER BY  productId DESC LIMIT 4";
+        $result = $this->db->select($query);
+        return $result;
+    }
+
+//    public function getSingleProduct($id)
+//    {
+//        $query = "SELECT p.* c.catName, b.brandName
+//        FROM tbl_product as p, tbl_category as c, tbl_brand as b
+//        WHERE p.catId = c.catId AND p.brandId = b.brandId, AND productId = '$id'";
+//        $result = $this->db->select($query);
+//        return $result;
+//    }
 
 }
 
