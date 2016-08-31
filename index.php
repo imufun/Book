@@ -42,7 +42,7 @@
         </div>
         <div class="section group">
             <?php
-            $getNewPro = $pd->getNewProduct($id);
+            $getNewPro = $pd->getNewProduct();
             if ($getNewPro) {
                 while ($result = $getNewPro->fetch_assoc()) { ?>
                     <div class="grid_1_of_4 images_1_of_4">
