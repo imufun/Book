@@ -3,7 +3,6 @@
 
 <?php
 
-
 ?>
 <div class="main">
     <div class="content">

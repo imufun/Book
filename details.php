@@ -6,6 +6,11 @@ if (!isset($_GET['proid']) || $_GET['proid'] == null) {
     $id = $_GET['proid'];
 }
 
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $quantity = $_POST['quantity'];
+    $addCat = $ct->addToCart($quantity, $id);
+}
+
 ?>
 
     <div class="main">
@@ -31,8 +36,8 @@ if (!isset($_GET['proid']) || $_GET['proid'] == null) {
                                     <p>Brand:<span><?php echo $result['brandName']; ?></span></p>
                                 </div>
                                 <div class="add-cart">
-                                    <form action="cart.php" method="post">
-                                        <input type="number" class="buyfield" name="" value="1"/>
+                                    <form action="#" method="post">
+                                        <input type="number" class="buyfield" name="quantity" value="1"/>
                                         <input type="submit" class="buysubmit" name="submit" value="Buy Now"/>
                                     </form>
                                 </div>
