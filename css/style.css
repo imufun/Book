@@ -2476,3 +2476,12 @@ p.terms {
 		padding:4%;
 	}
 }
+
+.success {
+	background: green;
+	color: #fff;
+	padding: 10px;
+	text-align: center;
+	border-radius: 4px;
+	display: block;
+}

@@ -1,18 +1,33 @@
 <?php include 'inc/header.php'; ?>
 
+<?php
 
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $cartId = $_POST['cartId'];
+    $quantity = $_POST['quantity'];
+    $updateCart = $ct->updateCartQuantity($cartId, $quantity);
+}
+
+
+?>
 <div class="main">
     <div class="content">
         <div class="cartoption">
             <div class="cartpage">
                 <h2>Your Cart</h2>
+                <?php
+
+                if (isset($updateCart)) {
+                    echo $updateCart;
+                }
+                ?>
                 <table class="tblone">
                     <tr>
                         <th width="5%">SL</th>
-                        <th width="20%">Product Name</th>
-                        <th width="10%">Image</th>
-                        <th width="15%">Price</th>
-                        <th width="5%">Quantity</th>
+                        <th width="15%">Product Name</th>
+                        <th width="15%">Image</th>
+                        <th width="10%">Price</th>
+                        <th width="20%">Quantity</th>
                         <th width="20%">Total Price</th>
                         <th width="10%">Action</th>
                     </tr>
@@ -33,7 +48,9 @@
                                 <td><?php echo $result['price']; ?></td>
                                 <td>
                                     <form action="" method="post">
-                                        <input type="number" name="" value="1"/>
+                                        <input type="hidden" name="cartId" value="<?php echo $result['catID']; ?>"/>
+                                        <input type="number" name="quantity"
+                                               value="<?php echo $result['quantity']; ?>"/>
                                         <input type="submit" name="submit" value="Update"/>
                                     </form>
                                 </td>
@@ -65,10 +82,17 @@
                     </tr>
                     <tr>
                         <th>Grand Total :</th>
-                        <td><?php
+                        <td>
+
+                            <?php
                             $vat = $sum * 0.1;
                             $gtotal = $sum + $vat;
-                            echo $gtotal;
+                            if (!$gtotal) {
+                                echo "no product added";
+                            } else {
+                                echo $gtotal;
+                            }
+
 
                             ?></td>
                     </tr>
