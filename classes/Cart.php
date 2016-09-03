@@ -44,15 +44,21 @@ Class Cart
         $price = $result['price'];
         $image = $result['image'];
 
-        $query = "INSERT INTO tbl_cart(sId,productId,productName,price,quantity,image) VALUES ('$sId','$productId','$productname',  '$price','$quantity','$image')";
+        $checkquery = "SELECT * FROM tbl_cart WHERE productId = '$productId' AND sId='$sId'";
+        $getPro = $this->db->select($checkquery);
 
-        $inserted_row = $this->db->insert($query);
-        if ($inserted_row) {
-            header("Location:cart.php");
+        if ($getPro) {
+            $msg = 'Product Already Added';
+            return $msg;
         } else {
-            header("Location:404.php");
+            $query = "INSERT INTO tbl_cart(sId,productId,productName,price,quantity,image) VALUES ('$sId','$productId','$productname',  '$price','$quantity','$image')";
+            $inserted_row = $this->db->insert($query);
+            if ($inserted_row) {
+                header("Location:cart.php");
+            } else {
+                header("Location:404.php");
+            }
         }
-
     }
 
 

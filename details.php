@@ -41,6 +41,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                         <input type="submit" class="buysubmit" name="submit" value="Buy Now"/>
                                     </form>
                                 </div>
+
+                                <span style="color:red; font-size: 18px;margin-top:15px;display: block">
+                                    <?php
+                                    if (isset($addCat)) {
+                                        echo $addCat;
+                                    }
+                                    ?>
+                                </span>
                             </div>
                             <div class="product-desc">
                                 <h2>Product Details</h2>
