@@ -8,6 +8,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $updateCart = $ct->updateCartQuantity($cartId, $quantity);
 }
 
+if (isset($_GET['delpro'])) {
+    $delid = $_GET['delpro'];
+    $delProduct = $ct->delProductByCart($delid);
+
+
+}
+
 
 ?>
 <div class="main">
@@ -20,7 +27,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 if (isset($updateCart)) {
                     echo $updateCart;
                 }
+
+                if (isset($delProduct)) {
+                    echo $delProduct;
+                }
+
                 ?>
+
+
                 <table class="tblone">
                     <tr>
                         <th width="5%">SL</th>
@@ -60,7 +74,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                     echo $total;
 
                                     ?> </td>
-                                <td><a href="">X</a></td>
+                                <td><a onclick="return confirm('Are you sure to Delete?');"
+                                       href="?delpro=<?php echo $result['catID']; ?>">X</a></td>
+
                             </tr>
 
                             <?php

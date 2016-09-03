@@ -70,7 +70,7 @@ Class Cart
         return $result;
     }
 
-    //updaet cart Quantity
+    //update cart Quantity
     public function updateCartQuantity($cartId, $quantity)
     {
         $cartId = mysqli_real_escape_string($this->db->link, $cartId);
@@ -83,6 +83,20 @@ Class Cart
             return $msg;
         } else {
             $msg = "<span class='error'>Update not update</span>";
+            return $msg;
+        }
+    }
+
+    //Delete item product
+    function delProductByCart($delid)
+    {
+        $delId = mysqli_real_escape_string($this->db->link, $delid);
+        $query = "DELETE FROM tbl_cart WHERE catID = '$delId'";
+        $deldata = $this->db->delete($query);
+        if ($deldata) {
+            echo "<script>window.location = 'cart.php';</script>";
+        } else {
+            $msg = "<span class='error'>Product  not Delete</span>";
             return $msg;
         }
     }
