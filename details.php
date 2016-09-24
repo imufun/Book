@@ -10,7 +10,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $quantity = $_POST['quantity'];
     $addCat = $ct->addToCart($quantity, $id);
 }
-
 ?>
 
     <div class="main">
@@ -21,8 +20,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     $getPD = $pd->getSingleProduct($id);
                     if ($getPD) {
                         while ($result = $getPD->fetch_assoc()) {
-
-
                             ?>
                             <div class="grid images_3_of_2">
                                 <img src="admin/<?php echo $result['image']; ?>" alt=""/>
@@ -48,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                         echo $addCat;
                                     }
                                     ?>
-                                </span>
+                            </span>
                             </div>
                             <div class="product-desc">
                                 <h2>Product Details</h2>
@@ -56,23 +53,24 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                             </div>
                         <?php }
-                    } ?>
+                    }
+                    ?>
                 </div>
                 <div class="rightsidebar span_3_of_1">
                     <h2>CATEGORIES</h2>
+
                     <ul>
-                        <li><a href="productbycat.html">Mobile Phones</a></li>
-                        <li><a href="productbycat.html">Desktop</a></li>
-                        <li><a href="productbycat.html">Laptop</a></li>
-                        <li><a href="productbycat.html">Accessories</a></li>
-                        <li><a href="productbycat.html#">Software</a></li>
-                        <li><a href="productbycat.html">Sports & Fitness</a></li>
-                        <li><a href="productbycat.html">Footwear</a></li>
-                        <li><a href="productbycat.html">Jewellery</a></li>
-                        <li><a href="productbycat.html">Clothing</a></li>
-                        <li><a href="productbycat.html">Home Decor & Kitchen</a></li>
-                        <li><a href="productbycat.html">Beauty & Healthcare</a></li>
-                        <li><a href="productbycat.html">Toys, Kids & Babies</a></li>
+                        <?php
+                        $getCat = $ctgry->getAllcat();
+                        if ($getCat) {
+
+                            while ($result = $getCat->fetch_assoc()) {
+                                ?>
+                                <li>
+                                    <a href="productbycat.php?catId=<?php echo $result['catID']; ?>"><?php echo $result['catName']; ?></a>
+                                </li>
+                            <?php }
+                        } ?>
                     </ul>
 
                 </div>

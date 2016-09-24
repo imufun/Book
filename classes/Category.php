@@ -1,10 +1,12 @@
 <?php
+
 //
 //// include '../lib/Session.php';
 //// Session::checkLogin();
 //require_once '../lib/Database.php';
 //require_once '../helpers/Format.php';
-//?>
+//
+?>
 
 <?php
 
@@ -69,33 +71,39 @@ class Category {
             $msg = "<span class='error'>Category field must not be empty !</span>";
             return $msg;
         } else {
-           // $query = "UPDATE  tbl_category SET (catName) values('$catName')";
-            
-            $query = "UPDATE tbl_category SET catName ='$catName' WHERE catID='$id' ";
-            $update_row = $this->db->insert($query); 
-     
-                if ($update_row) {
-                    $msg = "<span class='success'>Category Item Updated</span>";
-                    return $msg;
-                } else {
-                    $msg = "<span class='error'>Category not Updated</span>";
-                    return $msg;
-               
-            }
-        }   
-    }
+            // $query = "UPDATE  tbl_category SET (catName) values('$catName')";
 
-    public function delCatByid($id){
-        $query = "DELETE FROM tbl_category WHERE catId='$id'";
-        $deledata = $this->db->delete($query);
-        if ($deledata) {
-             $msg = "<span class='success'>Delete Item  </span>";
-            return $msg;
-        }else{
-            $msg = "<span class='error'>Ite, not deleted !!!</span>";
-             return $msg;
+            $query = "UPDATE tbl_category SET catName ='$catName' WHERE catID='$id' ";
+            $update_row = $this->db->insert($query);
+
+            if ($update_row) {
+                $msg = "<span class='success'>Category Item Updated</span>";
+                return $msg;
+            } else {
+                $msg = "<span class='error'>Category not Updated</span>";
+                return $msg;
+            }
         }
     }
 
+    public function delCatByid($id) {
+        $query = "DELETE FROM tbl_category WHERE catId='$id'";
+        $deledata = $this->db->delete($query);
+        if ($deledata) {
+            $msg = "<span class='success'>Delete Item  </span>";
+            return $msg;
+        } else {
+            $msg = "<span class='error'>Ite, not deleted !!!</span>";
+            return $msg;
+        }
+    }
+    
+ 
+//    public function ShowCatName($id){
+//        
+//        $query = "SELECT *FROM tbl_category WHERE catName='$id'";
+//        $result = $this->db->select($query);
+//        return $result;
+//    }
 }
 ?>

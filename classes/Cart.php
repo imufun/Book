@@ -59,6 +59,8 @@ Class Cart
                 header("Location:404.php");
             }
         }
+
+        //json_encode($this->addToCart($quantity, $id));
     }
 
 
@@ -99,6 +101,14 @@ Class Cart
             $msg = "<span class='error'>Product  not Delete</span>";
             return $msg;
         }
+    }
+
+    public function checkCartTable()
+    {
+        $sId = session_id();
+        $query = "SELECT *FROM tbl_cart WHERE sId = '$sId' ";
+        $result = $this->db->select($query);
+        return $result;
     }
 
 
