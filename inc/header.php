@@ -20,6 +20,8 @@
     $fm = new Format();
     $pd = new Product();
     $ct = new Cart();
+$ctgry = new  Category();
+
 ?>
 <?php
     header('Cache-Control: no-cache, must-revalidate');

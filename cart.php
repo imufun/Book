@@ -14,7 +14,7 @@ if (isset($_GET['delpro'])) {
 }
 
  if(!isset($_GET['id'])){
-     echo "<meta http-equiv='refresh' content='0; URL=?id=Refresh' />";
+     //echo "<meta http-equiv='refresh' content='0'; URL='0;?id=Refresh' />";
  }
 
 
@@ -123,7 +123,9 @@ if (isset($_GET['delpro'])) {
                     </tr>
                 </table>
                 <?php } else{
-                    echo "Please buy something!! ";
+
+                    //header ("Location:index.php");
+                    //  echo "Please buy something!! ";
                 }?>
                 <?php
                 ?>

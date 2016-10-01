@@ -195,6 +195,14 @@ Class Product
         return $result;
     }
 
+    public function ProductByCat($id)
+    {
+
+        $query = "SELECT *FROM tbl_product WHERE catID= '$id'";
+        $result = $this->db->select($query);
+        return $result;
+    }
+
 }
 
 ?>

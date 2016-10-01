@@ -1,6 +1,6 @@
 <?php include 'inc/header.php'; ?>
 
-<?php 
+<?php
 
 if (!isset($_GET['catId']) || $_GET['catId'] == null) {
     echo "<script>window.location = '404.php';</script>";
@@ -20,24 +20,27 @@ if (!isset($_GET['catId']) || $_GET['catId'] == null) {
         </div>
         <div class="section group">
 
-             <?php 
-                $ProductByCat =$pd->ProductByCat($id);
-                if($ProductByCat){
-                    
-                    while ($result = $ProductByCat->fetch_assoc()){
-               
-             
-             ?>
-            <div class="grid_1_of_4 images_1_of_4">
-                <img src="admin/<?php echo $result['image'];?>" alt="" />
-                <h2><?php echo $result['productName'];?> </h2>
-                <p><span class="price"><?php echo $result['price'];?></span></p>
-                <div class="button"><span><a href="details.php?proid=<?php echo $result['productId'];?>" class="details">Details</a></span></div>
-            </div>
-                <?php  } }?>
-            
-        </div>
+            <?php
+            $ProductByCat = $pd->ProductByCat($id);
+            if ($ProductByCat) {
 
+                while ($result = $ProductByCat->fetch_assoc()) {
+
+
+                    ?>
+                    <div class="grid_1_of_4 images_1_of_4">
+                        <img src="admin/<?php echo $result['image']; ?>" alt=""/>
+                        <h2><?php echo $result['productName']; ?> </h2>
+                        <p><span class="price"><?php echo $result['price']; ?></span></p>
+                        <div class="button"><span><a href="details.php?proid=<?php echo $result['productId']; ?>"
+                                                     class="details">Details</a></span></div>
+                    </div>
+                <?php }
+            } else {
+                echo "<p style='font-size: 16px;padding-top: 40px;text-align: center'>Product not found </p>";
+            } ?>
+
+        </div>
 
 
     </div>
