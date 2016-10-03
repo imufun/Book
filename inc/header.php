@@ -21,6 +21,7 @@
     $pd = new Product();
     $ct = new Cart();
 $ctgry = new  Category();
+$customer = new Customer();
 
 ?>
 <?php
