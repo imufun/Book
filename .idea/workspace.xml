@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="adc3bf71-7f75-4631-a50e-44f5045ae97a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/login.php" afterPath="$PROJECT_DIR$/login.php" />
     </list>
     <ignored path="bookshop.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -339,7 +338,7 @@
       <workItem from="1475290585742" duration="5698000" />
       <workItem from="1475413182035" duration="1478000" />
       <workItem from="1475504713869" duration="10778000" />
-      <workItem from="1475601066615" duration="8449000" />
+      <workItem from="1475601066615" duration="8454000" />
     </task>
     <task id="LOCAL-00001" summary="All file nicelly worked !! :)">
       <created>1468951810234</created>
@@ -502,11 +501,18 @@
       <option name="project" value="LOCAL" />
       <updated>1475610096748</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="&#10;update&#10;&#10;customer registration and login successfully done !!!!">
+      <created>1475610354115</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1475610354115</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="163157000" />
+    <option name="totallyTimeSpent" value="163162000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="839" height="735" extended-state="0" />
