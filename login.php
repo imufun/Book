@@ -5,14 +5,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login'])) {
     $customerLog = $customer->customerLogin($_POST);
 
 }
-//$al = new Adminlogin();
-//if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login'])) {
-//    $phone = $_POST['phone'];
-//    $password = md5($_POST['password']);
-//    $customerLog = $customer->customerLogin($phone, $password);
-//    //echo "string";
-//
-//}
 ?>
 <div class="main">
     <div class="content">

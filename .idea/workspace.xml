@@ -54,8 +54,8 @@
       <file leaf-file-name="login.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/login.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="28" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
+            <state relative-caret-position="-204">
+              <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -112,6 +112,7 @@
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <list>
+        <option value="sinbad" />
         <option value="imufun" />
         <option value="Sinbad" />
       </list>
@@ -338,7 +339,7 @@
       <workItem from="1475290585742" duration="5698000" />
       <workItem from="1475413182035" duration="1478000" />
       <workItem from="1475504713869" duration="10778000" />
-      <workItem from="1475601066615" duration="8138000" />
+      <workItem from="1475601066615" duration="8449000" />
     </task>
     <task id="LOCAL-00001" summary="All file nicelly worked !! :)">
       <created>1468951810234</created>
@@ -494,11 +495,18 @@
       <option name="project" value="LOCAL" />
       <updated>1475516654365</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="customer registration and login successfully done !!!!">
+      <created>1475610096748</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1475610096748</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="162846000" />
+    <option name="totallyTimeSpent" value="163157000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="839" height="735" extended-state="0" />
@@ -593,7 +601,9 @@
     <MESSAGE value="cart.php&#10;&#10;------------------------------&#10;update product item and multiply by item" />
     <MESSAGE value="Delete product from details page" />
     <MESSAGE value="cart" />
-    <option name="LAST_COMMIT_MESSAGE" value="cart" />
+    <MESSAGE value="customer registration and login successfully done !!!!" />
+    <MESSAGE value="&#10;update&#10;&#10;customer registration and login successfully done !!!!" />
+    <option name="LAST_COMMIT_MESSAGE" value="&#10;update&#10;&#10;customer registration and login successfully done !!!!" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.5738636" />
   </component>
@@ -911,8 +921,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/login.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="28" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
+        <state relative-caret-position="-204">
+          <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
           <folding />
         </state>
       </provider>
