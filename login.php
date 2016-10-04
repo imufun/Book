@@ -1,34 +1,32 @@
 <?php include 'inc/header.php'; ?>
 
 <?php
-//            if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login']) ){
-//               $customerLogin = $customer->customerLogin($_POST);
-//
-//            }
-//$al = new Adminlogin();
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-
-    $email = $_POST['email'];
-    $password = md5($_POST['password']);
-
-    $customerLogin = $customer->customerLogin($email, $password);
-    //echo "string";
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login'])) {
+    $customerLog = $customer->customerLogin($_POST);
 
 }
+//$al = new Adminlogin();
+//if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login'])) {
+//    $phone = $_POST['phone'];
+//    $password = md5($_POST['password']);
+//    $customerLog = $customer->customerLogin($phone, $password);
+//    //echo "string";
+//
+//}
 ?>
 <div class="main">
     <div class="content">
         <div class="login_panel">
             <?php
-            if (isset($customerLogin)) {
-                echo $customerLogin;
+            if (isset($customerLog)) {
+                echo $customerLog;
             }
 
             ?>
             <h3>Existing Customers</h3>
             <p>Sign in with the form below.</p>
             <form action="" method="POST">
-                <input name="email" type="email" placeholder="Email">
+                <input name="phone" type="text" placeholder="Phone">
                 <input name="password" type="password" placeholder="Password">
                 <div class="buttons">
                     <div>
@@ -46,16 +44,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         }
         ?>
-
-
         <div class="register_account">
-
             <?php
             if (isset($customerReg)) {
                 echo $customerReg;
-
             }
-
             ?>
             <h3>Register New Account</h3>
             <form action="" method="post">
