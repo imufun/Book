@@ -6,29 +6,29 @@
 //    include ($filepath . '/../helpers/Format.php');
 
 
-  //  $filepath = realpath(dirname(__FILE__));
-    include 'lib/Session.php';
-    Session::init();
-    include 'lib/Database.php';
-    include 'helpers/Format.php';
+//  $filepath = realpath(dirname(__FILE__));
+include 'lib/Session.php';
+Session::init();
+include 'lib/Database.php';
+include 'helpers/Format.php';
 
-    spl_autoload_register(function ($class) {
-        include_once "classes/" . $class . ".php";
-    });
+spl_autoload_register(function ($class) {
+    include_once "classes/" . $class . ".php";
+});
 
-    $db = new Database();
-    $fm = new Format();
-    $pd = new Product();
-    $ct = new Cart();
+$db = new Database();
+$fm = new Format();
+$pd = new Product();
+$ct = new Cart();
 $ctgry = new  Category();
 $customer = new Customer();
 
 ?>
 <?php
-    header('Cache-Control: no-cache, must-revalidate');
-    header("Expires: Mon, 26 Jul 1997 05:00:00 GMT");
-    header("Cache-Control: no-cache");
-    header("Pragma: no-cache");
+header('Cache-Control: no-cache, must-revalidate');
+header("Expires: Mon, 26 Jul 1997 05:00:00 GMT");
+header("Cache-Control: no-cache");
+header("Pragma: no-cache");
 
 ?>
 
@@ -74,21 +74,40 @@ $customer = new Customer();
                         <span class="cart_title">Cart:</span>
                         <span class="no_product">
                             <?php
-                                $getData = $ct->checkCartTable();
-                                if ($getData){
-                                    $sum =Session::get("sum");
-                                    $qty =Session::get("qty");
-                                    echo $sum." BDT ". "|" . " Qty: " . $qty;
-                                }else{
-                                    echo "(Empty)";
-                                }
+                            $getData = $ct->checkCartTable();
+                            if ($getData) {
+                                $sum = Session::get("sum");
+                                $qty = Session::get("qty");
+                                echo $sum . " BDT " . "|" . " Qty: " . $qty;
+                            } else {
+                                echo "(Empty)";
+                            }
 
                             ?>
                         </span>
                     </a>
                 </div>
             </div>
-            <div class="login"><a href="login.php">Login</a></div>
+
+            <?php // logout
+            if (isset($_GET['cid'])) {
+                Session::destroy();
+            }
+            ?>
+            <div class="login">
+
+
+                <?php
+
+                $login = Session::get("cuslogin");
+                if ($login == false) { ?>
+                    <a href="login.php">Login</a>
+                <?php } else { ?>
+                    <a href="?cid=<?php Session::set('cmrId') ?>">Logout</a>
+                <?php } ?>
+
+
+            </div>
             <div class="clear"></div>
         </div>
         <div class="clear"></div>
