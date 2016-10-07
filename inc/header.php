@@ -37,15 +37,24 @@ header("Pragma: no-cache");
     <title>Store Website</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link href="css/style.css" rel="stylesheet" type="text/css" media="all"/>
     <link href="css/menu.css" rel="stylesheet" type="text/css" media="all"/>
+    <!-- Latest compiled and minified CSS -->
+
     <script src="js/jquerymain.js"></script>
     <script src="js/script.js" type="text/javascript"></script>
-    <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
     <script type="text/javascript" src="js/nav.js"></script>
     <script type="text/javascript" src="js/move-top.js"></script>
     <script type="text/javascript" src="js/easing.js"></script>
     <script type="text/javascript" src="js/nav-hover.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
     <link href='http://fonts.googleapis.com/css?family=Monda' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Doppio+One' rel='stylesheet' type='text/css'>
     <script type="text/javascript">
@@ -117,7 +126,19 @@ header("Pragma: no-cache");
             <li><a href="index.php">Home</a></li>
             <li><a href="products.php">Products</a></li>
             <li><a href="topbrands.php">Top Brands</a></li>
-            <li><a href="cart.php">Cart</a></li>
+
+            <?php
+            $chekCart = $ct->checkCartTable();
+            if ($chekCart) {
+                ?>
+                <li><a href="cart.php">Cart</a></li>
+            <?php } ?>
+
+            <?php
+            $login = Session::get("cuslogin");
+            if ($login == true) { ?>
+                <li><a href="profile.php">Profile</a></li>
+            <?php } ?>
             <li><a href="contact.php">Contact</a></li>
             <div class="clear"></div>
         </ul>
