@@ -1,5 +1,15 @@
 <?php include 'inc/header.php'; ?>
 
+<?php
+
+
+$login = Session::get("cuslogin");
+if ($login == false) {
+    header("Location:order.php");
+}
+
+?>
+
 <div class="main">
     <div class="content">
         <div class="section" style="padding-top: 40px;padding-bottom: 40px">

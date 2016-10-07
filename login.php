@@ -1,13 +1,5 @@
 <?php include 'inc/header.php'; ?>
-
 <?php
-
-$login = Session::get("cuslogin");
-if ($login == true) {
-    header("Location:order.php");
-} else {
-    header("Location:login.php");
-}
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login'])) {
     $customerLog = $customer->customerLogin($_POST);

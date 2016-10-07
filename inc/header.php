@@ -90,20 +90,20 @@ header("Pragma: no-cache");
             </div>
 
             <?php // logout
-            if (isset($_GET['cid'])) {
+            if (isset($_GET["cid"])) {
+                $delData = $ct->delCustomerCart();
                 Session::destroy();
             }
             ?>
             <div class="login">
 
-
                 <?php
-
                 $login = Session::get("cuslogin");
                 if ($login == false) { ?>
                     <a href="login.php">Login</a>
                 <?php } else { ?>
-                    <a href="?cid=<?php Session::set('cmrId') ?>">Logout</a>
+                    <a href="?cid=<?php Session::get("cmrId") ?>">Logout</a>
+
                 <?php } ?>
 
 
