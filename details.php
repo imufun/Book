@@ -22,7 +22,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         while ($result = $getPD->fetch_assoc()) {
                             ?>
                             <div class="grid images_3_of_2">
-                                <img src="admin/<?php echo $result['image']; ?>" alt=""/>
+                                <a href="admin/<?php echo $result['image']; ?>" data-options="zoomWidth:400px; zoomHeight:400px" class="MagicZoom"> <img src="admin/<?php echo $result['image']; ?>" alt=""/> </a>
+
                             </div>
                             <div class="desc span_3_of_2">
                                 <h2><?php echo $result['productName']; ?> </h2>

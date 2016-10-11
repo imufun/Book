@@ -43,7 +43,7 @@ Class Product
         $unique_image = substr(md5(time()), 0, 10) . '.' . $file_ext;
         $uploaded_image = "uploads/" . $unique_image;
 
-        if ($productName == "" || $catId == "" || $brandID == "" || $body == "" || $price == "" || $file_name == "" || $type == "") {
+        if (isset($productName) == "" || isset($catId) == "" || isset($brandID) == "" || isset($body) == "" || isset($price) == "" || isset($file_name) == "" || isset($type) == "") {
             $msg = "<span class='error'>Field must not be empty!</span>";
             return $msg;
         } elseif ($file_size > 1048567) {

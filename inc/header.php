@@ -42,7 +42,7 @@ header("Pragma: no-cache");
     <link href="css/style.css" rel="stylesheet" type="text/css" media="all"/>
     <link href="css/menu.css" rel="stylesheet" type="text/css" media="all"/>
     <!-- Latest compiled and minified CSS -->
-
+    <link type="text/css" rel="stylesheet" href="css/magiczoomplus.css"/>
     <script src="js/jquerymain.js"></script>
     <script src="js/script.js" type="text/javascript"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -51,6 +51,7 @@ header("Pragma: no-cache");
     <script type="text/javascript" src="js/move-top.js"></script>
     <script type="text/javascript" src="js/easing.js"></script>
     <script type="text/javascript" src="js/nav-hover.js"></script>
+    <script type="text/javascript" src="js/magiczoomplus.js"></script>
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
             integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
@@ -133,6 +134,7 @@ header("Pragma: no-cache");
             if ($chekCart) {
                 ?>
                 <li><a href="cart.php">Cart</a></li>
+                <li><a href="payment.php">Payment</a></li>
             <?php } ?>
 
             <?php
