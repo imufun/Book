@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="adc3bf71-7f75-4631-a50e-44f5045ae97a" name="Default" comment="">
+    <list default="true" id="adc3bf71-7f75-4631-a50e-44f5045ae97a" name="Default" comment="ajax search">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/Product.php" afterPath="$PROJECT_DIR$/classes/Product.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inc/header.php" afterPath="$PROJECT_DIR$/inc/header.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/success.php" afterPath="$PROJECT_DIR$/success.php" />
     </list>
     <ignored path="bookshop.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -44,11 +41,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="header.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="header.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/inc/header.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="560">
-              <caret line="107" column="0" selection-start-line="107" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
+            <state relative-caret-position="203">
+              <caret line="86" column="51" selection-start-line="86" selection-start-column="51" selection-end-line="86" selection-end-column="51" />
               <folding>
                 <element signature="e#798#800#0#PHP" expanded="true" />
                 <marker date="1476699694779" expanded="true" signature="977:1061" ph="SELECT *FROM... tbl_product" />
@@ -57,7 +54,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="fetch.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="fetch.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/fetch.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="119">
@@ -410,7 +407,7 @@
       <workItem from="1476385176232" duration="105000" />
       <workItem from="1476448436761" duration="727000" />
       <workItem from="1476631512806" duration="7017000" />
-      <workItem from="1476696672004" duration="3084000" />
+      <workItem from="1476696672004" duration="3245000" />
     </task>
     <task id="LOCAL-00001" summary="All file nicelly worked !! :)">
       <created>1468951810234</created>
@@ -615,11 +612,18 @@
       <option name="project" value="LOCAL" />
       <updated>1475920120342</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="ajax search">
+      <created>1476699765706</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1476699765706</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="222489000" />
+    <option name="totallyTimeSpent" value="222650000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -1042,17 +1046,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/inc/header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="560">
-          <caret line="107" column="0" selection-start-line="107" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
-          <folding>
-            <element signature="e#798#800#0#PHP" expanded="true" />
-            <marker date="1476699694779" expanded="true" signature="977:1061" ph="SELECT *FROM... tbl_product" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/fetch.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -1067,6 +1060,17 @@
             <marker date="1476699694741" expanded="true" signature="745:770" ph="..." />
             <marker date="1476699694741" expanded="true" signature="745:771" ph="..." />
             <marker date="1476699694741" expanded="true" signature="745:960" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="86" column="51" selection-start-line="86" selection-start-column="51" selection-end-line="86" selection-end-column="51" />
+          <folding>
+            <element signature="e#798#800#0#PHP" expanded="true" />
+            <marker date="1476699694779" expanded="true" signature="977:1061" ph="SELECT *FROM... tbl_product" />
           </folding>
         </state>
       </provider>
