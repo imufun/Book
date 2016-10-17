@@ -32,6 +32,34 @@ header("Pragma: no-cache");
 
 ?>
 
+<?php
+//
+//
+//$ouput = '';
+//if (isset($_POST['search'])) {
+//    $search = $_POST['search'];
+//    $search = preg_replace("#[^0-9a-z]#i", "", $search);
+//    $query = mysqli_query('',"SELECT *FROM tbl_product WHERE productName LIKE '%$search%' OR body LIKE '%$search%'") or die("Not Found");
+//    //$query = mysqli_query("SELECT *FROM tbl_product WHERE productName LIKE '%$search%' OR body LIKE '%$search%' or price '%$search%' OR image '%$search%'") or die("Not Found");
+//    $count = mysqli_num_rows($query);
+//    if ($count == 0) {
+//        $ouput = 'There are no search result';
+//    } else {
+//        while ($row = mysqli_fetch_array($query)) {
+//            $proName = $row['productName'];
+//            $probody = $row['body'];
+//           // $proPrice = $row['price'];
+//           /// $proimg = $row['image'];
+//          //  $proId = $row['productId'];
+//
+//            $ouput .= '<div>' . $proName . ' ' . $probody . ' </div>';
+//            //$ouput .= '<div>' . $proName . ' ' . $probody . ' ' . $proPrice . ' ' . $proimg . ' ' . $proId . '</div>';
+//
+//        }
+//    }
+//}
+//?>
+
 <!DOCTYPE HTML>
 <head>
     <title>Store Website</title>
@@ -62,6 +90,30 @@ header("Pragma: no-cache");
         $(document).ready(function ($) {
             $('#dc_mega-menu-orange').dcMegaMenu({rowItems: '4', speed: 'fast', effect: 'fade'});
         });
+
+        $(document).ready(function () {
+            $('#search_text').keyup(function () {
+                var text = $(this).val();
+                if (text != '') {
+                    $.ajax({
+                        url: "fetch.php",
+                        method: "post",
+                        data: {search: text},
+                        dataType: "text",
+                        success: function (data) {
+                            $('#result').html(data);
+                        }
+
+                    });
+
+                } else {
+                    $('#result').html('');
+
+                }
+
+                // alert(text);
+            });
+        });
     </script>
 </head>
 <body>
@@ -72,16 +124,17 @@ header("Pragma: no-cache");
         </div>
         <div class="header_top_right">
             <div class="search_box">
-                <form>
-                    <input type="text" value="Search for Products" onfocus="this.value = '';"
-                           onblur="if (this.value == '') {this.value = 'Search for Products';}"><input type="submit"
-                                                                                                       value="SEARCH">
+                <form action="" method="POST">
+                    <input type="text" name="search" id="search_text">
+                    <input type="submit" value="SEARCH">
                 </form>
+
+                <?php //print ("$ouput"); ?>
             </div>
             <div class="shopping_cart">
                 <div class="cart">
                     <a href="#" title="View my shopping cart" rel="nofollow">
-                        <span class="cart_title">Cart:</span>
+                        <span class="cart_title"> Cart:</span>
                         <span class="no_product">
                             <?php
                             $getData = $ct->checkCartTable();
@@ -94,7 +147,7 @@ header("Pragma: no-cache");
                             }
 
                             ?>
-                        </span>
+</span>
                     </a>
                 </div>
             </div>
@@ -146,3 +199,4 @@ header("Pragma: no-cache");
             <div class="clear"></div>
         </ul>
     </div>
+    <div id="result"></div>
