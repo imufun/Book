@@ -21,7 +21,7 @@ if (mysqli_num_rows($result) > 0) {
                     <td>'.$row["productName"].'</td>
                     <td>'.$row["body"].'</td>
                     <td>'.$row["price"].'</td>
-                    <td>'.$row["image"].'</td>
+                    <td><img src ="admin/' . $row["image"] . ' "/></td>
                 </tr>
               ';
         echo $output;

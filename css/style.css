@@ -114,6 +114,7 @@ body {
 }
 
 .wrap {
+    overflow: hidden;
     width: 78%;
     margin: 0 auto;
     padding: 0 1%;
